@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Nueva Receta</title>
+</head>
+<body>
+    <h1>Nueva Receta</h1>
+    <form th:action="@{/recetas}" th:object="${receta}" method="post">
+        <label for="nombre">Nombre:</label>
+        <input type="text" th:field="*{nombre}" id="nombre" name="nombre">
+
+        <label for="duracionMinutos">Duracion:</label>
+        <input type="text" th:field="*{duracionMinutos}" id="duracionMinutos" name="duracionMinutos">
+        <button type="submit">Guardar</button>
+    </form>
+    <a href="/recetas">Volver a la lista</a>
+</body>
+</html>

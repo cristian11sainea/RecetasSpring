@@ -8,8 +8,8 @@ public interface RecetaRepository extends CrudRepository<Receta, Long>{
 
     List<Receta> findByNombre(String nombre);
     
-    List<Receta> findByDuracionGreaterThan(Integer duracion);
+    //List<Receta> findByDuracionGreaterThan(Integer duracionMinutos);
 
-    List<Receta> findByDuracionLessThan(Integer duracion);
+    //List<Receta> findByDuracionLessThan(Integer duracionMinutos);
 
 }

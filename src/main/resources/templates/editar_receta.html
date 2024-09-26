@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Receta</title>
+</head>
+<body>
+    <h1>Editar Receta</h1>
+    <form th:action="@{'/recetas/actualizar/' + ${receta.id}}" th:object="${receta}" method="post">
+        <label for="nombre">Nombre:</label>
+        <input type="text" th:field="*{nombre}" id="nombre" name="nombre">
+        <label for="duracionMinutos">Duracion:</label>
+        <input type="text" th:field="*{duracionMinutos}" id="duracionMinutos" name="duracionMinutos">
+        
+        <button type="submit">Actualizar</button>
+    </form>
+    <a href="/recetas">Volver a la lista</a>
+</body>
+</html>
