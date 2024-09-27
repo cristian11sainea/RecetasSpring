@@ -7,11 +7,16 @@
 <body>
     <h1>Lista de Recetas</h1>
     <a href="/recetas/nueva">Nueva Receta</a>
+
+
+    <a href="/categorias/nueva">Nueva Categoria</a>
+    <a href="/categorias">Lista Categoria</a>
     <table>
         <thead>
             <tr>
                 <th>ID</th>
                 <th>Nombre</th>
+                <th>Categoria</th>
                 <th>Acciones</th>
             </tr>
         </thead>
@@ -19,6 +24,7 @@
             <tr th:each="receta : ${recetas}">
                 <td th:text="${receta.id}"></td>
                 <td th:text="${receta.nombre}"></td>
+                <td th:text="${receta.categoria.nombre}"></td>
                 <td>
                     <a th:href="@{'/recetas/editar/' + ${receta.id}}">Editar</a>
                     <a th:href="@{'/recetas/eliminar/' + ${receta.id}}" onclick="return confirm('¿Estás seguro?')">Eliminar</a>

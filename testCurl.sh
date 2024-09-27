@@ -3,7 +3,7 @@
 # Script para probar la API de productos
 
 # URL base de la API
-BASE_URL="http://localhost:8080/api/recetas"
+BASE_URL="http://localhost:8080/recetas"
 
 # 1. Crear un nuevo producto
 echo "Creando un nueva receta..."

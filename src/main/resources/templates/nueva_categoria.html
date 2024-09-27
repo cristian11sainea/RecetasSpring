@@ -1,0 +1,22 @@
+<!-- nueva_categoria.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Nueva Categoría</title>
+</head>
+<body>
+    <h1>Agregar Nueva Categoría</h1>
+
+    <form th:action="@{/categorias}" th:object="${categoria}" method="post">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" th:field="*{nombre}" required/>
+        <label for="nombre">Descripcion:</label>
+        <input type="text" id="descripcion" th:field="*{descripcion}" descripcion/>
+        <br/>
+        <button type="submit">Guardar</button>
+    </form>
+
+    <a href="/categorias">Volver a la lista Categoría</a>
+    <a href="/recetas">Volver a la lista Recetas</a>
+</body>
+</html>

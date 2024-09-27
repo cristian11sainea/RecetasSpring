@@ -12,6 +12,18 @@
         <label for="duracionMinutos">Duracion:</label>
         <input type="text" th:field="*{duracionMinutos}" id="duracionMinutos" name="duracionMinutos">
         
+         <!-- Lista desplegable para seleccionar la categoría -->
+         <label for="categoria">Categoría:</label>
+         <select th:field="*{categoria.id}" id="categoria" name="categoria">
+             <option value="" disabled>Selecciona una categoría</option>
+             <option th:each="categoria : ${categorias}" 
+                     th:value="${categoria.id}" 
+                     th:text="${categoria.nombre}" 
+                     th:selected="${categoria.id == receta.categoria.id}">
+             </option>
+         </select>
+
+
         <button type="submit">Actualizar</button>
     </form>
     <a href="/recetas">Volver a la lista</a>

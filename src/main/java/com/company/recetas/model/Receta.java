@@ -1,10 +1,12 @@
-package com.company.recetas;
+package com.company.recetas.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -19,6 +21,10 @@ public class Receta {
 
     @Column(nullable = false)
     private Integer duracionMinutos;
+
+    @ManyToOne
+    @JoinColumn(name = "categoria_id", nullable = false)
+    private Categoria categoria;
 
     public Receta(){
 
@@ -46,6 +52,12 @@ public class Receta {
     }
     public void setDuracionMinutos(Integer duracionMinutos) {
         this.duracionMinutos = duracionMinutos;
+    }
+    public Categoria getCategoria() {
+        return categoria;
+    }
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
     }
 
     

@@ -1,0 +1,22 @@
+<!-- editar_categoria.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Editar Categoría</title>
+</head>
+<body>
+    <h1>Editar Categoría</h1>
+
+    <form th:action="@{/categorias/actualizar/{id}(id=${categoria.id})}" th:object="${categoria}" method="post">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" th:field="*{nombre}" required/>
+
+        <label for="nombre">Descripcion:</label>
+        <input type="text" id="descripcion" th:field="*{descripcion}" required/>
+        <br/>
+        <button type="submit">Actualizar</button>
+    </form>
+
+    <a href="/categorias">Volver a la lista</a>
+</body>
+</html>

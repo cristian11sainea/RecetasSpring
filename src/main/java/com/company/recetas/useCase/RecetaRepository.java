@@ -1,8 +1,10 @@
-package com.company.recetas;
+package com.company.recetas.useCase;
 
 import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
+
+import com.company.recetas.model.Receta;
 
 public interface RecetaRepository extends CrudRepository<Receta, Long>{
 
