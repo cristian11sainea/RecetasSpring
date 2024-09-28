@@ -8,10 +8,7 @@
     <h1>Nuevo Usuario</h1>
     <form th:action="@{/usuarios}" th:object="${usuario}" method="post">
         <label for="nombre">Nombre:</label>
-        <input type="text" th:field="*{nombre}" id="nombre" name="nombre">
-
-        <label for="email">Email:</label>
-        <input type="text" th:field="*{email}" id="email" name="email">
+        <input type="text" th:field="*{user}" id="nombre" name="nombre">
 
         <label for="password">Contraseña:</label>
         <input type="password" th:field="*{password}" id="password" name="password">

@@ -11,4 +11,5 @@ import com.company.recetas.model.Usuario;
 public interface  UsuarioRepository extends CrudRepository<Usuario, Long>{
 
     List<Usuario> findByUser(String user);
+    
 }

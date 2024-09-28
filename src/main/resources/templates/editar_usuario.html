@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Usuario</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <h1>Editar Usuario</h1>
+
+    <form th:action="@{/usuarios/actualizar/{id}(id=${usuario.id})}" th:object="${usuario}" method="post">
+        <!-- Campo de ID (Solo lectura, no editable) -->
+        <div>
+            <label for="id">ID</label>
+            <input type="text" id="id" th:field="*{id}" disabled>
+        </div>
+
+        <!-- Campo para Nombre de Usuario -->
+        <div>
+            <label for="user">Nombre de Usuario</label>
+            <input type="text" id="user" th:field="*{user}" required>
+        </div>
+
+
+        <!-- Campo para Rol (opcional, dependiendo de cómo gestiones los roles) -->
+        <div>
+            <label for="role">Rol</label>
+            <input type="text" id="role" th:field="*{role}">
+        </div>
+
+        <!-- Campo para la Contraseña (si deseas cambiarla, aunque podrías dejarla fuera si no la modificas) -->
+        <div>
+            <label for="password">Contraseña</label>
+            <input type="password" id="password" th:field="*{password}">
+        </div>
+
+        <!-- Botones para Guardar o Cancelar -->
+        <div>
+            <button type="submit">Guardar Cambios</button>
+            <a href="/usuarios" class="button">Cancelar</a>
+        </div>
+    </form>
+</body>
+</html>

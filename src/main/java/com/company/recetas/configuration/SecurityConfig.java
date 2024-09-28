@@ -3,21 +3,17 @@ package com.company.recetas.configuration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.crypto.password.NoOpPasswordEncoder;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
 public class SecurityConfig {
-   /*  @Bean
+    @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();  // Para encriptar las contraseñas
-    }*/
-     @Bean
+    }
+     /*@Bean
     public PasswordEncoder passwordEncoder() {
         return NoOpPasswordEncoder.getInstance();  // Desactivar la encriptación de contraseñas
     }
@@ -33,13 +29,13 @@ public class SecurityConfig {
 
         return new InMemoryUserDetailsManager(user);
     }
-    
+    */
         
     
 
     
    
-/*
+
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
@@ -59,12 +55,12 @@ public class SecurityConfig {
                 .permitAll()
             );
         return http.build();
-    }*/
+    }
 
     // Configuración temporal de usuario en memoria
 
 
-    
+    /*
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
@@ -82,6 +78,6 @@ public class SecurityConfig {
             );
 
         return http.build();
-    }
+    } */
    
 }

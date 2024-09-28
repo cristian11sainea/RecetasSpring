@@ -23,8 +23,9 @@ public class UserController {
     private  final UsuarioRepository usuarioRepository;
     private PasswordEncoder passwordEncoder;
 
-    public UserController (UsuarioRepository usuarioRepository){
+    public UserController (UsuarioRepository usuarioRepository, PasswordEncoder passwordEncoder){
         this.usuarioRepository = usuarioRepository;
+        this.passwordEncoder = passwordEncoder;
     }
 
      @GetMapping
